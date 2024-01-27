@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const noteList = require('./db/db.json')
 const { readFromFile, readAndAppend } = require('./helpers/fsUtils');
+const generateUniqueId = require('generate-unique-id');
 
 //parsing JSON
 app.use(express.json());
@@ -36,6 +37,7 @@ app.post('/api/notes', (req, res) => {
       const newNote = {
         title,
         text,
+        id: generateUniqueId(),
       };
 
       readAndAppend(newNote, './db/db.json');
