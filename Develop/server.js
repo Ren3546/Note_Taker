@@ -6,7 +6,7 @@ const noteList = require('./db/db.json')
 const { readFromFile, readAndAppend } = require('./helpers/fsUtils');
 const generateUniqueId = require('generate-unique-id');
 
-//parsing JSON
+//parsing the JSON
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
