@@ -1,5 +1,5 @@
 const express = require('express');
-const PORT = process.env.port || 3001;
+const PORT = process.env.port;
 const path = require('path');
 const app = express();
 const noteList = require('./db/db.json')
